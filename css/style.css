@@ -1,0 +1,123 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+*::selection{
+    background-color: red;
+    color: #000;
+}
+*::-webkit-scrollbar{
+    background-color: #111;
+    width: 5px;
+    height: 5px;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: red;
+}
+body{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #dfdfdf;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+header{
+    width: 100%;
+    min-height: 3em;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    margin-bottom: 3em;
+}
+header p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.3em;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+header p:nth-child(1){
+    font-size: 2em;
+    font-weight: 200;
+}
+header p:nth-child(2) span{
+    font-size: 2em;
+    font-weight: 200;
+    margin-right: 0.5em;
+}
+@media (max-width: 600px){
+    header p:nth-child(2){
+        display: none;
+    }
+}
+.downloadBtn{
+    margin-left: 2em;
+    background-color: transparent;
+    border: 2px solid red;
+    padding: 7px 24px;
+    color: red;
+    font-weight: 600;
+    transition: 0.33s ease;
+}
+.downloadBtn:hover{
+    cursor: pointer;
+    background-color: red;
+    color: #000;
+}
+.swiper {
+    width: 75%;
+    height: auto;
+    box-shadow: 0 0 2em 0.1em red;
+}
+.second{
+    width: 60%;
+    margin-top: 2em;
+}
+.swiper:hover{
+    user-select: none;
+    cursor: grabbing;
+}
+.swiper-slide img{
+    width: 100%;
+}
+.swiper-button-prev, .swiper-button-next{
+    color: red;
+}
+.swiper-pagination-bullet-active{
+    background-color: red;
+}
+#content{
+    margin-top: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#content h1{
+    margin-bottom: 0;
+}
+#content h2{
+    font-size: 16px;
+}
+.step{
+    margin-top: 1em;
+}
+footer{
+    margin-top: 15em;
+    background-color: #000;
+    min-height: 15em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer div{
+    margin: 3em;
+}
