@@ -1,0 +1,25 @@
+[data-darktoTheme="standard"] {
+    /* Фон контейнеров, челленджей, гаража... */
+    .Common-container:not(.Common-entranceBackground), .NewShopCommonComponentStyle-commonContainer {
+        background: var(--theme-standard-color-bg) !important;
+    }
+
+    /* Контекстное меню (например во вкладке друзей) */
+    .ContextMenuStyle-menu {
+        background-color: var(--theme-standard-color-bg) !important;
+    }
+
+    /* Градиент стартового экрана */
+    .Common-entranceGradient  {
+        background: linear-gradient(var(--theme-standard-color-bg) 0%, transparent 100%) !important;
+    }
+
+    /* Экраны загрузки */
+    .LobbyLoaderComponentStyle-container {
+        background: var(--theme-standard-color-bg) !important;
+    }
+
+    .ApplicationLoaderComponentStyle-container {
+        background-color: var(--theme-standard-color-bg) !important;
+    }
+}

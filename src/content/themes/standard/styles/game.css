@@ -1,0 +1,41 @@
+[data-darktoTheme="standard"] {
+    /* Таб */
+    .BattleTabStatisticComponentStyle-containerInsideResults {
+        background-color: color-mix(in srgb, var(--theme-standard-color-bg), transparent 25%) !important;
+        backdrop-filter: blur(4px);
+    }
+
+    .BattleTabStatisticComponentStyle-resistanceModuleCell {
+        visibility: visible !important;
+        width: auto !important;
+    }
+
+    .TableComponentStyle-thead th:nth-child(1) {
+        width: 29em !important;
+    }
+
+    .BattleTabStatisticComponentStyle-dmTableContainer tbody td:nth-child(1) {
+        width: 16em;
+    }
+
+    /* .TableComponentStyle-thead tr {
+        display: grid !important;
+        grid-template-columns: 2fr repeat(5, 1fr) !important;
+        grid-template-rows: 1fr !important;
+
+        th {
+            width: auto !important;
+        }
+    }
+
+    .BattleTabStatisticComponentStyle-selectedRowBackGround {
+        display: grid !important;
+        grid-template-columns: repeat(7, 1fr) !important;
+        grid-template-rows: 1fr !important;
+        gap: 8px;
+
+        td {
+            width: auto !important;
+        }
+    } */
+}

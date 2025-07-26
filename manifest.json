@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "DarkTO",
+  "version": "2.0.0",
+  "action": { "default_popup": "index.html" },
+  "content_scripts": [
+    {
+        "js": ["src/content/main.tsx"],
+        "matches": ["https://tankionline.com/play/*"]
+    }
+  ]
+}

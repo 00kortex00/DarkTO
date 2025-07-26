@@ -1,0 +1,46 @@
+.themeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px;
+    overflow: hidden;
+
+    width: 172px;
+    height: 172px;
+
+    background-color: color-mix(in srgb, var(--color-primary), transparent 90%);
+    border-radius: 24px;
+
+    transition: .33s;
+    cursor: pointer;
+    outline: 2px solid transparent;
+
+
+    &:hover,
+    &.selected {
+        background-color: color-mix(in srgb, var(--color-primary), transparent 80%);
+    }
+
+    &.selected {
+        outline: 2px solid color-mix(in srgb, var(--color-primary), transparent 40%);
+        cursor: default;
+    }
+
+    h3 {
+        font-weight: 700;
+    }
+
+    .isSelectedText {
+        opacity: 0;
+        color: color-mix(in srgb, var(--color-primary), transparent 40%);
+        translate: 0 20px;
+        transition: .33s;
+    }
+
+    &.selected .isSelectedText {
+        opacity: 1;
+        translate: 0;
+    }
+}

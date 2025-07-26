@@ -1,0 +1,13 @@
+[data-darktoTheme="standard"] {
+    .ListItemsComponentStyle-itemsListContainer {
+        background: transparent !important;
+
+        &>div:nth-child(1) {
+            background: linear-gradient(90deg, var(--theme-standard-color-bg) 0%, transparent 100%) !important;
+        }
+
+        &>div:nth-child(2) {
+            background: linear-gradient(-90deg, var(--theme-standard-color-bg) 0%, transparent 100%) !important;
+        }
+    }
+}

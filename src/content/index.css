@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+#darkto {
+    font-weight: 500;
+    * {
+        user-select: none;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Montserrat, sans-serif;
+    }
+
+    --text-large: 20px;
+    --text-title: 16px;
+    --text-primary: 12px;
+
+    --color-bg: #000;
+    --color-primary: #EFEFEF;
+    --color-accent: #FF0051;
+
+    font-size: var(--text-primary);
+}
