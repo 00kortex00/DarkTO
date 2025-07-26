@@ -33,7 +33,15 @@ export const HotkeyInput: FC<HotkeyInputProps> = (props) => {
 
     return (
         <label htmlFor={props.id} className='darkto__hotKeyInput'>
-            <input ref={inputRef} {...props} className={`darkto-input ${props.className}`} type="text" value={hotkey} />
+            <input
+                ref={inputRef}
+                {...props}
+                className={`darkto-input ${props.className}`}
+                type="text"
+                value={hotkey}
+                autoComplete='off'
+                spellCheck='false'
+            />
         </label>
     )
 }

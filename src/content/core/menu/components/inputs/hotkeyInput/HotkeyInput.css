@@ -1,6 +1,9 @@
 #darkto {
     .darkto__hotKeyInput input {
         caret-color: transparent;
+        outline: 2px solid transparent;
+        transition: .33s;
+        
         &:focus {
             outline: 2px solid var(--color-accent);
         }
