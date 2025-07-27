@@ -1,11 +1,7 @@
 import { useState } from "react"
-import { ColorInput } from "../../components/inputs/colorInput/ColorInput"
 import { FormFiled } from "../../components/formField/FormField"
-import { NumberInput } from "../../components/inputs/numberInput/NumberInput"
-import { TextInput } from "../../components/inputs/textInput/TextInput"
 import { Section } from "../../components/section/Section"
-import { Switch } from "../../components/inputs/switch/Switch"
-import { HotkeyInput } from "../../components/inputs/hotkeyInput/HotkeyInput"
+import { ColorInput, HotkeyInput, NumberInput, Switch, TextInput } from "../../components/inputs";
 
 export const TimerPage = () => {
     const [timerBackgroundColor, setTimerBackgroundColor] = useState('#ff0000ff');
