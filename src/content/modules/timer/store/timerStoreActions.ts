@@ -8,30 +8,32 @@ interface Set {
 type CreateTimerStoreActions = (set: Set) => TimerStoreActions;
 
 export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
-  setTimerVisible: (isTimerVisible: boolean) => set({ isTimerVisible }),
-  switchTimerVisible: () => set((prev: TimerStore) => ({ isTimerVisible: !prev.isTimerVisible })),
+  setTimerPosition: (timerPosition) => set({ timerPosition }),
+  
+  setTimerVisible: (isTimerVisible) => set({ isTimerVisible }),
+  switchTimerVisible: () => set((prev) => ({ isTimerVisible: !prev.isTimerVisible })),
 
-  setTimerMovable: (isTimerMovable: boolean) => set({ isTimerMovable }),
-  switchTimerMovable: () => set((prev: TimerStore) => ({ isTimerMovable: !prev.isTimerMovable })),
+  setTimerMovable: (isTimerMovable) => set({ isTimerMovable }),
+  switchTimerMovable: () => set((prev) => ({ isTimerMovable: !prev.isTimerMovable })),
 
-  setTimerTimes: (timerTimes: Partial<TimerStore["timerTimes"]>) =>
-    set((prev: TimerStore) => ({
+  setTimerTimes: (timerTimes) =>
+    set((prev) => ({
       timerTimes: {
         ...prev.timerTimes,
         ...timerTimes,
       },
     })),
 
-  setTimerKeyBinds: (timerKeyBinds: Partial<TimerStore["timerKeyBinds"]>) =>
-    set((prev: TimerStore) => ({
+  setTimerKeyBinds: (timerKeyBinds) =>
+    set((prev) => ({
       timerKeyBinds: {
         ...prev.timerKeyBinds,
         ...timerKeyBinds,
       },
     })),
 
-  setTimerCustomization: (timerCustomization: Partial<TimerStore["timerCustomization"]>) =>
-    set((prev: TimerStore) => ({
+  setTimerCustomization: (timerCustomization) =>
+    set((prev) => ({
       timerCustomization: {
         ...prev.timerCustomization,
         ...timerCustomization,

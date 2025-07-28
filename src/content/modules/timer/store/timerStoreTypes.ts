@@ -21,6 +21,8 @@ export interface TimerCustomization {
 }
 
 export interface TimerStoreActions {
+    setTimerPosition: (timerPosition: [number, number]) => void;
+
     setTimerVisible: (visibility: boolean) => void;
     switchTimerVisible: () => void;
 
@@ -33,6 +35,7 @@ export interface TimerStoreActions {
 }
 
 export interface TimerStoreValues {
+    timerPosition: [number, number];
     isTimerVisible: boolean;
     isTimerMovable: boolean;
     timerTimes: TimerTimes;
