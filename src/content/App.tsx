@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu } from "./core/menu/Menu";
 import { ThemeController } from "./themes/ThemeController";
+import { initMods } from "./core/initMods";
 
 function App() {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
@@ -13,8 +14,9 @@ function App() {
   }
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    initMods();
 
+    window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [])
 
