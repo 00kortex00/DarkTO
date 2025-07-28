@@ -7,25 +7,25 @@ import { HexAlphaColorPicker } from 'react-colorful';
 import type { InputProps } from "../InputProps";
 
 interface ColorInputProps extends InputProps {
-    color: string;
-    setColor: Dispatch<SetStateAction<string>>
+    colorState: string;
+    setColorState: Dispatch<SetStateAction<string>>
 }
 
 export const ColorInput: FC<ColorInputProps> = (props) => {
-    const { color, setColor } = props;
+    const { colorState, setColorState, ...restProps } = props;
 
     return (
         <label htmlFor={props.id} className="darkto-input--color">
-            <input {...props} 
+            <input {...restProps} 
                 className={`darkto-input ${props.className}`}
-                type="text" value={color}
-                onChange={({ target }) => props.setColor(target.value)} 
+                type="text" value={colorState}
+                onChange={({ target }) => props.setColorState(target.value)} 
                 style={{
-                    '--darkto__color-input_color': color
+                    '--darkto__color-input_color': colorState
                 } as CSSProperties}
             />
             <div className="darkto__colorInput">
-                <HexAlphaColorPicker color={color} onChange={setColor} />
+                <HexAlphaColorPicker color={colorState} onChange={setColorState} />
             </div>
         </label>
     )

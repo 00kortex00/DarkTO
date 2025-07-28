@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { FormFiled } from "../../components/formField/FormField"
-import { Section } from "../../components/section/Section"
-import { ColorInput, HotkeyInput, NumberInput, Switch, TextInput } from "../../components/inputs";
+import { FormFiled } from "../../../core/menu/components/formField/FormField"
+import { Section } from "../../../core/menu/components/section/Section"
+import { ColorInput, HotkeyInput, NumberInput, Switch, TextInput } from "../../../core/menu/components/inputs";
 
 export const TimerPage = () => {
     const [timerBackgroundColor, setTimerBackgroundColor] = useState('#ff0000ff');
@@ -23,8 +23,8 @@ export const TimerPage = () => {
                 <FormFiled
                     inputElement={<ColorInput
                         id="darkto__timer__text-color"
-                        color={timerBackgroundColor}
-                        setColor={setTimerBackgroundColor}
+                        colorState={timerBackgroundColor}
+                        setColorState={setTimerBackgroundColor}
                     />}
                     label="Цвет фона"
                 />

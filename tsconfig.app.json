@@ -28,7 +28,8 @@
     "paths": {
       "@src/*": ["src/*"],
       "@icons": ["src/icons/index.ts"],
-      "@icons/*": ["src/icons/*"]
+      "@icons/*": ["src/icons/*"],
+      "@mods/*": ["src/content/mods/*"]
     }
   },
   "include": ["src"]

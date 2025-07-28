@@ -9,8 +9,8 @@ interface FormFiledProps {
 
 export const FormFiled: FC<FormFiledProps> = ({ inputElement, label }) => {
     return (
-        <p className="darkto-formField">
+        <div className="darkto-formField">
             {inputElement} {label}
-        </p>
+        </div>
     )
 }

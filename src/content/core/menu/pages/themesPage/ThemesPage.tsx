@@ -19,6 +19,7 @@ export const ThemesPage = () => {
                 />
                 {Object.keys(themes).map((theme) => (
                     <ThemeCard
+                        key={`theme-${themes[theme].name}`}
                         onClick={() => setTheme(theme)}
                         name={themes[theme].name} icon={themes[theme].icon}
                         selected={(currentTheme === theme)} 

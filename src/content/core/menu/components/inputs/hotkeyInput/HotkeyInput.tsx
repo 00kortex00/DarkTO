@@ -10,7 +10,7 @@ interface HotkeyInputProps extends InputProps {
 }
 
 export const HotkeyInput: FC<HotkeyInputProps> = (props) => {
-    const { hotkey, setHotkey } = props;
+    const { hotkey, setHotkey, ...restProps } = props;
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -35,12 +35,13 @@ export const HotkeyInput: FC<HotkeyInputProps> = (props) => {
         <label htmlFor={props.id} className='darkto__hotKeyInput'>
             <input
                 ref={inputRef}
-                {...props}
+                {...restProps}
                 className={`darkto-input ${props.className}`}
                 type="text"
                 value={hotkey}
                 autoComplete='off'
                 spellCheck='false'
+                readOnly
             />
         </label>
     )
