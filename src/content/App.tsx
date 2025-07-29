@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { cloneElement, useEffect, useState } from "react";
 import { Menu } from "./core/menu/Menu";
 import { ThemeController } from "./themes/ThemeController";
 import { initMods } from "./core/initMods";
+import { useRootLoaderStore } from "./core/store/rootLoaderStore";
 
 function App() {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
+  const { itemsInRoot } = useRootLoaderStore();
 
   function handleKeyDown(event: KeyboardEvent) {
     const key = event.code.replace('Key', '').toLowerCase();
@@ -24,6 +26,7 @@ function App() {
     <>
       <ThemeController />
       {menuOpened && <Menu />}
+      {itemsInRoot.map((modItem, index) => cloneElement(modItem, { key: `mod-${index}` }))}
     </>
   )
 }

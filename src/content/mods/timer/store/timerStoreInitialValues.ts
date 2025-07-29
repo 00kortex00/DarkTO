@@ -24,5 +24,7 @@ export const timerStoreInitialValues: TimerStoreValues = {
         cornerRadius: 4,
         textColor: '#fff',
         textEndingColor: '#f00'
-    }
+    },
+
+    timerPosition: [0, 0]
 }

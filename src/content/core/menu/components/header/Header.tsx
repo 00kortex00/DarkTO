@@ -1,10 +1,11 @@
 import { DarktoLogo } from '@icons';
 import './Header.css';
-import { pages } from '../../pages/pages';
 import { useMenuStore } from '@src/content/core/store/menuStore';
+import { usePagesStore } from '../../pages/pagesStore';
 
 export const Header = () => {
     const { currentPage, setCurrentPage } = useMenuStore();
+    const { pages } = usePagesStore();
 
     return (
         <header>

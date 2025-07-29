@@ -29,7 +29,8 @@
       "@src/*": ["src/*"],
       "@icons": ["src/icons/index.ts"],
       "@icons/*": ["src/icons/*"],
-      "@mods/*": ["src/content/mods/*"]
+      "@mods/*": ["src/content/mods/*"],
+      "@modApi": ["src/content/core/modApi.ts"]
     }
   },
   "include": ["src"]

@@ -9,7 +9,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@icons': resolve(__dirname, './src/icons'),
-      '@src': resolve(__dirname, './src')
+      '@src': resolve(__dirname, './src'),
+      "@mods": resolve(__dirname, './src/content/mods'),
+      "@modApi": resolve(__dirname, './src/content/core/modApi'),
     }
   },
   plugins: [
