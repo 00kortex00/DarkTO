@@ -2,14 +2,12 @@ import type { FC, ReactNode } from 'react';
 import './Section.css';
 
 interface SectionProps {
-    title?: string;
     children?: ReactNode;
 }
 
-export const Section: FC<SectionProps> = ({ title, children }) => {
+export const Section: FC<SectionProps> = ({ children }) => {
     return (
         <section className='darkto-section'>
-            <h2>{title}</h2>
             {children}
         </section>
     )

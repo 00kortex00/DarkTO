@@ -1,23 +1,24 @@
-export interface TimerTimes {
-    startTime: number;
-    addingTime: number;
-    subtractTime: number;
-}
+export interface TimerStoreValues {
+    timerPosition: [number, number];
 
-export interface TimerKeyBinds {
-    switchVisibility: string;
-    pause: string;
-    reset: string;
-    addTime: string;
-    subtractTime: string;
-}
+    isTimerVisible: boolean;
+    isTimerMovable: boolean;
 
-export interface TimerCustomization {
-    cornerRadius: number;
-    backgroundColor: string;
-    textColor: string;
-    backgroundColorEnding: string;
-    textEndingColor: string;
+    timerStartTime: number;
+    timerAddingTime: number;
+    timerSubtractingTime: number;
+
+    timerKeyAddTime: string;
+    timerKeySubtractTime: string;
+    timerKeyPause: string;
+    timerKeyReset: string;
+    timerKeySwitchVisibility: string;
+
+    timerBackgroundColor: string;
+    timerBackgroundColorEnding: string;
+    timerTextColor: string;
+    timerTextEndingColor: string;
+    timerCornerRadius: number;
 }
 
 export interface TimerStoreActions {
@@ -29,18 +30,21 @@ export interface TimerStoreActions {
     setTimerMovable: (timerMovable: boolean) => void;
     switchTimerMovable: () => void;
 
-    setTimerTimes: (timerTimes: Partial<TimerTimes>) => void;
-    setTimerKeyBinds: (timerKeyBinds: Partial<TimerKeyBinds>) => void;
-    setTimerCustomization: (timerCustomization: Partial<TimerCustomization>) => void;
-}
+    setTimerStartTime: (seconds: number | string) => void;
+    setTimerAddingTime: (seconds: number | string) => void;
+    setTimerSubtractingTime: (seconds: number | string) => void;
 
-export interface TimerStoreValues {
-    timerPosition: [number, number];
-    isTimerVisible: boolean;
-    isTimerMovable: boolean;
-    timerTimes: TimerTimes;
-    timerKeyBinds: TimerKeyBinds;
-    timerCustomization: TimerCustomization;
+    setTimerKeyAddTime: (key: string) => void;
+    setTimerKeySubtractTime: (key: string) => void;
+    setTimerKeyPause: (key: string) => void;
+    setTimerKeyReset: (key: string) => void;
+    setTimerKeySwitchVisibility: (key: string) => void;
+
+    setTimerBackgroundColor: (color: string) => void;
+    setTimerBackgroundColorEnding: (color: string) => void;
+    setTimerTextColor: (color: string) => void;
+    setTimerTextEndingColor: (color: string) => void;
+    setTimerCornerRadius: (radius: number | string) => void;
 }
 
 export type TimerStore = TimerStoreActions & TimerStoreValues;

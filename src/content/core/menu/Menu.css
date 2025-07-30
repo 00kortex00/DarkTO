@@ -1,4 +1,15 @@
 #darkto {
+    ::-webkit-scrollbar {
+        background-color: transparent;
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: color-mix(in srgb, var(--color-primary), transparent 80%);
+        border-radius: 4px;
+    }
+    
     .darkto-menu {
         position: fixed;
         top: 50%;
@@ -28,7 +39,8 @@
             padding: 32px;
             perspective: 1000px;
             transform-style: preserve-3d;
-            overflow: hidden;
+            overflow: auto;
+            margin: 8px;
         }
 
         main>div {

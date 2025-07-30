@@ -8,7 +8,7 @@ import type { InputProps } from "../InputProps";
 
 interface ColorInputProps extends InputProps {
     colorState: string;
-    setColorState: Dispatch<SetStateAction<string>>
+    setColorState: Dispatch<SetStateAction<string>> | ((color: string) => void)
 }
 
 export const ColorInput: FC<ColorInputProps> = (props) => {

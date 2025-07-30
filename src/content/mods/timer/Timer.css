@@ -1,0 +1,44 @@
+#darkto {
+    .darkto-timer {
+        --timer-color-background: #00a;
+        --timer-color-primary: #fff;
+        --timer-color-background-ending: #a00a;
+        --timer-color-primary-ending: #fff;
+
+        position: fixed;
+        top: 4%;
+        left: 47%;
+        z-index: 50;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        pointer-events: none;
+
+        height: 48px;
+        min-width: 96px;
+        font-size: 16px;
+        font-weight: 700;
+
+        background-color: var(--timer-color-background);
+        color: var( --timer-color-primary);
+        border-radius: 8px;
+
+        backdrop-filter: blur(4px);
+
+        &.movable {
+            pointer-events: all;
+            cursor: grab;
+
+            &:active {
+                cursor: grabbing;
+            }
+        }
+
+        &.ending {
+            background-color: var(--timer-color-background-ending);
+            color: var(--timer-color-primary-ending);
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import { formatNumber } from "@src/content/utils/formatNumber";
 import type { TimerStore, TimerStoreActions } from "./timerStoreTypes";
 
 interface Set {
@@ -16,27 +17,40 @@ export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
   setTimerMovable: (isTimerMovable) => set({ isTimerMovable }),
   switchTimerMovable: () => set((prev) => ({ isTimerMovable: !prev.isTimerMovable })),
 
-  setTimerTimes: (timerTimes) =>
-    set((prev) => ({
-      timerTimes: {
-        ...prev.timerTimes,
-        ...timerTimes,
-      },
-    })),
+  setTimerStartTime: (timerStartTime) => {
+    const formatedNumber = formatNumber(timerStartTime)
+    set({
+      timerStartTime: (formatedNumber < 0)? 0 : formatedNumber
+    })
+  },
+  setTimerAddingTime: (timerAddingTime) => {
+    const formatedNumber = formatNumber(timerAddingTime)
+    set({
+      timerAddingTime: (formatedNumber < 0)? 0 : formatedNumber
+    })
+  },
+  setTimerSubtractingTime: (timerSubtractingTime) => {
+    const formatedNumber = formatNumber(timerSubtractingTime)
+    set({
+      timerSubtractingTime: (formatedNumber < 0)? 0 : formatedNumber
+    })
+  },
 
-  setTimerKeyBinds: (timerKeyBinds) =>
-    set((prev) => ({
-      timerKeyBinds: {
-        ...prev.timerKeyBinds,
-        ...timerKeyBinds,
-      },
-    })),
+  setTimerKeyAddTime: (timerKeyAddTime) => set({ timerKeyAddTime }),
+  setTimerKeySubtractTime: (timerKeySubtractTime) => set({ timerKeySubtractTime }),
+  setTimerKeyPause: (timerKeyPause) => set({ timerKeyPause }),
+  setTimerKeyReset: (timerKeyReset) => set({ timerKeyReset }),
+  setTimerKeySwitchVisibility: (timerKeySwitchVisibility) => set({ timerKeySwitchVisibility }),
 
-  setTimerCustomization: (timerCustomization) =>
-    set((prev) => ({
-      timerCustomization: {
-        ...prev.timerCustomization,
-        ...timerCustomization,
-      },
-    }))
+  setTimerBackgroundColor: (timerBackgroundColor) => set({ timerBackgroundColor }),
+  setTimerBackgroundColorEnding: (timerBackgroundColorEnding) => set({ timerBackgroundColorEnding }),
+  setTimerTextColor: (timerTextColor) => set({ timerTextColor }),
+  setTimerTextEndingColor: (timerTextEndingColor) => set({ timerTextEndingColor }),
+  setTimerCornerRadius: (timerCornerRadius) => {
+    const formatedNumber = formatNumber(timerCornerRadius);
+    set({
+      timerCornerRadius: (formatedNumber < 0)? 0 : formatedNumber
+    })
+  }
+
 });

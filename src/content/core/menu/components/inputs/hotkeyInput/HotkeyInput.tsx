@@ -6,7 +6,7 @@ import { formatKeyCode } from '@src/content/utils/formatKeyCode';
 
 interface HotkeyInputProps extends InputProps {
     hotkey: string;
-    setHotkey: Dispatch<SetStateAction<string>>;
+    setHotkey: Dispatch<SetStateAction<string>> | ((key: string) => void);
 }
 
 export const HotkeyInput: FC<HotkeyInputProps> = (props) => {

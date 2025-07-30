@@ -1,30 +1,24 @@
 import type { TimerStoreValues } from "./timerStoreTypes";
 
 export const timerStoreInitialValues: TimerStoreValues = {
+    timerPosition: [0, 0],
+
     isTimerVisible: false,
     isTimerMovable: true,
 
-    timerTimes: {
-        addingTime: 5,
-        subtractTime: 10,
-        startTime: 100
-    },
+    timerStartTime: 100,
+    timerAddingTime: 5,
+    timerSubtractingTime: 10,
 
-    timerKeyBinds: {
-        addTime: 'L',
-        subtractTime: 'J',
-        pause: 'K',
-        reset: 'I',
-        switchVisibility: 'M'
-    },
+    timerKeyAddTime: 'L',
+    timerKeySubtractTime: 'J',
+    timerKeyPause: 'K',
+    timerKeyReset: 'I',
+    timerKeySwitchVisibility: 'M',
 
-    timerCustomization: {
-        backgroundColor: '#000a',
-        backgroundColorEnding: '#000a',
-        cornerRadius: 4,
-        textColor: '#fff',
-        textEndingColor: '#f00'
-    },
-
-    timerPosition: [0, 0]
+    timerBackgroundColor: '#000a',
+    timerBackgroundColorEnding: '#000a',
+    timerCornerRadius: 4,
+    timerTextColor: '#fff',
+    timerTextEndingColor: '#f00'
 }
