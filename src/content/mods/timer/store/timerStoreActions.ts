@@ -1,5 +1,6 @@
 import { formatNumber } from "@src/content/utils/formatNumber";
 import type { TimerStore, TimerStoreActions } from "./timerStoreTypes";
+import { timerStoreInitialValues } from "./timerStoreInitialValues";
 
 interface Set {
     (partial: TimerStore | Partial<TimerStore> | ((state: TimerStore) => TimerStore | Partial<TimerStore>), replace?: false): void;
@@ -9,7 +10,7 @@ interface Set {
 type CreateTimerStoreActions = (set: Set) => TimerStoreActions;
 
 export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
-  setTimerPosition: (timerPosition) => set({ timerPosition }),
+  setTimerPosition: (timerPositionCallback) => set((prev) => ({ timerPosition: timerPositionCallback(prev.timerPosition) })),
   
   setTimerVisible: (isTimerVisible) => set({ isTimerVisible }),
   switchTimerVisible: () => set((prev) => ({ isTimerVisible: !prev.isTimerVisible })),
@@ -51,6 +52,8 @@ export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
     set({
       timerCornerRadius: (formatedNumber < 0)? 0 : formatedNumber
     })
-  }
+  },
+
+  resetDefaults: () => set({ ...timerStoreInitialValues })
 
 });

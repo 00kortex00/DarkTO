@@ -18,7 +18,7 @@ export const timerStoreInitialValues: TimerStoreValues = {
 
     timerBackgroundColor: '#000a',
     timerBackgroundColorEnding: '#000a',
-    timerCornerRadius: 4,
+    timerCornerRadius: 8,
     timerTextColor: '#fff',
     timerTextEndingColor: '#f00'
 }

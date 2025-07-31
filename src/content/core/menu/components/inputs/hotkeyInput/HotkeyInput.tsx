@@ -15,7 +15,6 @@ export const HotkeyInput: FC<HotkeyInputProps> = (props) => {
 
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
-            console.log(event);
             setHotkey(
                 formatKeyCode(event.code)
             );

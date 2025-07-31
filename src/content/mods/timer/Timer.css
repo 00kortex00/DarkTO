@@ -4,10 +4,16 @@
         --timer-color-primary: #fff;
         --timer-color-background-ending: #a00a;
         --timer-color-primary-ending: #fff;
+        --timer-corner-radius: 8px;
+        --timer-position-x: 0px;
+        --timer-position-y: 0px;
 
         position: fixed;
         top: 4%;
-        left: 47%;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        translate: var(--timer-position-x) var(--timer-position-y);
         z-index: 50;
 
         display: flex;
@@ -23,7 +29,7 @@
 
         background-color: var(--timer-color-background);
         color: var( --timer-color-primary);
-        border-radius: 8px;
+        border-radius: var(--timer-corner-radius);
 
         backdrop-filter: blur(4px);
 

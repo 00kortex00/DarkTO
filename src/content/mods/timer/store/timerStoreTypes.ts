@@ -21,8 +21,10 @@ export interface TimerStoreValues {
     timerCornerRadius: number;
 }
 
+type TimerPositionCallback = (prev: [number, number]) => [number, number];
+
 export interface TimerStoreActions {
-    setTimerPosition: (timerPosition: [number, number]) => void;
+    setTimerPosition: (timerPositionCallback: TimerPositionCallback) => void;
 
     setTimerVisible: (visibility: boolean) => void;
     switchTimerVisible: () => void;
@@ -45,6 +47,8 @@ export interface TimerStoreActions {
     setTimerTextColor: (color: string) => void;
     setTimerTextEndingColor: (color: string) => void;
     setTimerCornerRadius: (radius: number | string) => void;
+
+    resetDefaults: () => void;
 }
 
 export type TimerStore = TimerStoreActions & TimerStoreValues;
