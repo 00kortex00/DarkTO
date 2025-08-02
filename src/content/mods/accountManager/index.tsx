@@ -1,9 +1,8 @@
-import { createModMenu, createModElementInRoot } from "@modApi";
+import { createModMenu } from "@modApi";
 import { AccountManager } from "./AccountManager";
 
 const accountManager = () => {
-        createModMenu('Аккаунты', <div>123123</div>);
-        createModElementInRoot(<AccountManager />)
+        createModMenu('Аккаунты', <AccountManager />);
 }
 
 export default accountManager;
