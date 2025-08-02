@@ -1,7 +1,7 @@
 import { cloneElement, useEffect, useState } from "react";
 import { Menu } from "./core/menu/Menu";
 import { ThemeController } from "./themes/ThemeController";
-import { initMods } from "./core/initMods";
+import { initMods } from "./mods/initMods";
 import { useRootLoaderStore } from "./core/store/rootLoaderStore";
 
 function App() {
