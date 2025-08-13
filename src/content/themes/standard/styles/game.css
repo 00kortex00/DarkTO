@@ -1,6 +1,7 @@
 [data-darktoTheme="standard"] {
     /* Таб */
-    .BattleTabStatisticComponentStyle-containerInsideResults {
+    .BattleTabStatisticComponentStyle-containerInsideResults,
+    .BattleTabStatisticComponentStyle-containerInsideTeams {
         background-color: color-mix(in srgb, var(--theme-standard-color-bg), transparent 25%) !important;
         backdrop-filter: blur(4px);
     }
