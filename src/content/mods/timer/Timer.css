@@ -14,7 +14,7 @@
         transform: translate(-50%, 0);
 
         translate: var(--timer-position-x) var(--timer-position-y);
-        z-index: 50;
+        z-index: 1000;
 
         display: flex;
         justify-content: center;

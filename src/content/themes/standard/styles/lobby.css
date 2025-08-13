@@ -15,6 +15,14 @@
         height: 6em !important;
         position: relative;
 
+        &>div:nth-child(1) {
+            filter: grayscale(1);
+        }
+
+        h3 {
+            color: var(--theme-standard-color-accent) !important;
+        }
+
         &::after {
             content: '';
             z-index: -1;
@@ -224,5 +232,29 @@
     /* Модалка обмена тк на рубины */
     .ConverterDialogComponentStyle-modal {
         background: var(--theme-standard-color-bg) !important;
+    }
+
+    /* Время поиска битвы */
+    .MatchmakingWaitComponentStyle-container {
+        top: 16px !important;
+        right: 50% !important;
+        transform: translate(50%, 0);
+        background: transparent !important;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 120%;
+            height: 100%;
+            background-color: color-mix(in srgb, var(--theme-standard-color-bg), transparent 20%);
+            transform: skewX(15deg) translate(-50%, 0);
+            z-index: -1;
+        }
+
+        &>div:nth-child(1) {
+            display: none;
+        }
     }
 }

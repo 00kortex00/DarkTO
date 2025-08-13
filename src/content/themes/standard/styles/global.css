@@ -1,4 +1,7 @@
 [data-darktoTheme="standard"] {
+    
+    background: var(--theme-standard-color-bg) !important;
+
     /* Фон контейнеров, челленджей, гаража... */
     .Common-container:not(.Common-entranceBackground), .NewShopCommonComponentStyle-commonContainer {
         background: var(--theme-standard-color-bg) !important;
@@ -16,10 +19,14 @@
 
     /* Экраны загрузки */
     .LobbyLoaderComponentStyle-container {
-        background: var(--theme-standard-color-bg) !important;
+        background-color: var(--theme-standard-color-bg) !important;
     }
 
-    .ApplicationLoaderComponentStyle-container {
-        background-color: var(--theme-standard-color-bg) !important;
+    .ApplicationLoaderComponentStyle-container>div:nth-child(1) {
+        background: linear-gradient(transparent 0%, var(--theme-standard-color-bg) 100%) !important;
+    }
+
+    .LobbyLoaderComponentStyle-container {
+        background: var(--theme-standard-color-bg) !important;
     }
 }
