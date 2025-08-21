@@ -72,7 +72,7 @@ export const TimerCommon = () => {
                         value={String(timerEndingTime)}
                         onChange={(event) => setTimerEndingTime(event.target.value)}
                     />}
-                label="Истекающее время"
+                label="Истекающее время (сек.)"
             />
 
             <FormFiled
