@@ -1,12 +1,19 @@
 #darkto {
     .darkto-timer {
-        --timer-color-background: #00a;
-        --timer-color-primary: #fff;
-        --timer-color-background-ending: #a00a;
-        --timer-color-primary-ending: #fff;
-        --timer-corner-radius: 8px;
         --timer-position-x: 0px;
         --timer-position-y: 0px;
+
+        --timer-blur: 4px;
+        --timer-color-background: #00a;
+        --timer-color-primary: #fff;
+        --timer-corner-radius: 8px;
+        --timer-outline-size: 0px;
+        --timer-outline-color: #f00;
+
+        --timer-color-background-ending: #a00a;
+        --timer-color-primary-ending: #fff;
+        --timer-outline-size-ending: 2px;
+        --timer-outline-color-ending: #f00;
 
         position: fixed;
         top: 4%;
@@ -26,12 +33,13 @@
         min-width: 96px;
         font-size: 16px;
         font-weight: 700;
-
         background-color: var(--timer-color-background);
         color: var( --timer-color-primary);
         border-radius: var(--timer-corner-radius);
 
-        backdrop-filter: blur(4px);
+        outline: var(--timer-outline-size) solid var(--timer-outline-color);
+
+        backdrop-filter: blur(var(--timer-blur));
 
         &.movable {
             pointer-events: all;
@@ -45,6 +53,7 @@
         &.ending {
             background-color: var(--timer-color-background-ending);
             color: var(--timer-color-primary-ending);
+            outline: var(--timer-outline-size-ending) solid var(--timer-outline-color-ending);
         }
     }
 }

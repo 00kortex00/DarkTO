@@ -8,18 +8,25 @@ import { TimerMove } from './components/TimerMove';
 
 export const Timer = () => {
     const {
+        timerPosition,
         timerStartTime,
+        timerEndingTime,
 
         isTimerVisible,
         isTimerMovable,
 
-        timerBackgroundColor,
+        timerBlur,
         timerTextColor,
-        timerBackgroundColorEnding,
         timerTextEndingColor,
         timerCornerRadius,
+        timerOutlineSize,
+        timerOutlineColor,
 
-        timerPosition
+        timerBackgroundColor,
+        timerBackgroundColorEnding,
+        timerOutlineSizeEnding,
+        timerOutlineColorEnding
+
     } = useTimerStore();
 
     const [timerElement, setTimerElement] = useState<HTMLDivElement | null>(null);
@@ -36,15 +43,22 @@ export const Timer = () => {
             {isTimerVisible && (
                 <div
                     ref={setTimerElement}
-                    className={`darkto-timer ${isTimerMovable && 'movable'} ${(timeLeft <= 10) && 'ending'}`}
+                    className={`darkto-timer ${isTimerMovable && 'movable'} ${(Math.floor(timeLeft) <= timerEndingTime) && 'ending'}`}
                     style={{
+                        '--timer-position-x': `${timerPosition[0]}px`,
+                        '--timer-position-y': `${timerPosition[1]}px`,
+
+                        '--timer-blur': `${timerBlur}px`,
                         '--timer-color-background': timerBackgroundColor,
                         '--timer-color-primary': timerTextColor,
+                        '--timer-corner-radius': `${timerCornerRadius}px`,
+                        '--timer-outline-size': `${timerOutlineSize}px`,
+                        '--timer-outline-color': timerOutlineColor,
+
                         '--timer-color-background-ending': timerBackgroundColorEnding,
                         '--timer-color-primary-ending': timerTextEndingColor,
-                        '--timer-corner-radius': `${timerCornerRadius}px`,
-                        '--timer-position-x': `${timerPosition[0]}px`,
-                        '--timer-position-y': `${timerPosition[1]}px`
+                        '--timer-outline-size-ending': `${timerOutlineSizeEnding}px`,
+                        '--timer-outline-color-ending': timerOutlineColorEnding
                     }as CSSProperties}
                 >
                     {formatTime(timeLeft)}

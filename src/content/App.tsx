@@ -1,7 +1,7 @@
 import { cloneElement, useEffect, useState } from "react";
 import { Menu } from "./core/menu/Menu";
 import { ThemeController } from "./themes/ThemeController";
-import { initMods } from "./mods/initMods";
+import { initModules } from "./modules/initModules";
 import { useRootLoaderStore } from "./core/store/rootLoaderStore";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   }
 
   useEffect(() => {
-    initMods();
+    initModules();
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);

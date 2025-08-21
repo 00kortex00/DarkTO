@@ -9,6 +9,7 @@ export const timerStoreInitialValues: TimerStoreValues = {
     timerStartTime: 100,
     timerAddingTime: 5,
     timerSubtractingTime: 10,
+    timerEndingTime: 10,
 
     timerKeyAddTime: 'L',
     timerKeySubtractTime: 'J',
@@ -16,9 +17,15 @@ export const timerStoreInitialValues: TimerStoreValues = {
     timerKeyReset: 'I',
     timerKeySwitchVisibility: 'M',
 
-    timerBackgroundColor: '#000a',
-    timerBackgroundColorEnding: '#000a',
+    timerBlur: 4,
     timerCornerRadius: 8,
+    timerBackgroundColor: '#000a',
     timerTextColor: '#fff',
-    timerTextEndingColor: '#f00'
+    timerOutlineSize: 0,
+    timerOutlineColor: '#f00',
+
+    timerBackgroundColorEnding: '#000a',
+    timerTextEndingColor: '#f00',
+    timerOutlineSizeEnding: 2,
+    timerOutlineColorEnding: '#f00'
 }

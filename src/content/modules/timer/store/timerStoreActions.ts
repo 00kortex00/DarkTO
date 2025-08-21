@@ -1,4 +1,4 @@
-import { formatNumber } from "@src/content/utils/formatNumber";
+import { formatNumberPositive } from "@src/content/utils/formatNumber";
 import type { TimerStore, TimerStoreActions } from "./timerStoreTypes";
 import { timerStoreInitialValues } from "./timerStoreInitialValues";
 
@@ -18,24 +18,10 @@ export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
   setTimerMovable: (isTimerMovable) => set({ isTimerMovable }),
   switchTimerMovable: () => set((prev) => ({ isTimerMovable: !prev.isTimerMovable })),
 
-  setTimerStartTime: (timerStartTime) => {
-    const formatedNumber = formatNumber(timerStartTime)
-    set({
-      timerStartTime: (formatedNumber < 0)? 0 : formatedNumber
-    })
-  },
-  setTimerAddingTime: (timerAddingTime) => {
-    const formatedNumber = formatNumber(timerAddingTime)
-    set({
-      timerAddingTime: (formatedNumber < 0)? 0 : formatedNumber
-    })
-  },
-  setTimerSubtractingTime: (timerSubtractingTime) => {
-    const formatedNumber = formatNumber(timerSubtractingTime)
-    set({
-      timerSubtractingTime: (formatedNumber < 0)? 0 : formatedNumber
-    })
-  },
+  setTimerStartTime: (timerStartTime) => set({ timerStartTime: formatNumberPositive(timerStartTime) }),
+  setTimerAddingTime: (timerAddingTime) => set({ timerAddingTime: formatNumberPositive(timerAddingTime) }),
+  setTimerSubtractingTime: (timerSubtractingTime) => set({ timerSubtractingTime: formatNumberPositive(timerSubtractingTime) }),
+  setTimerEndingTime: (timerEndingTime) => set({ timerEndingTime: formatNumberPositive(timerEndingTime) }),
 
   setTimerKeyAddTime: (timerKeyAddTime) => set({ timerKeyAddTime }),
   setTimerKeySubtractTime: (timerKeySubtractTime) => set({ timerKeySubtractTime }),
@@ -43,16 +29,17 @@ export const createTimerStoreActions: CreateTimerStoreActions = (set) => ({
   setTimerKeyReset: (timerKeyReset) => set({ timerKeyReset }),
   setTimerKeySwitchVisibility: (timerKeySwitchVisibility) => set({ timerKeySwitchVisibility }),
 
+  setTimerBlur: (timerBlur) => set({ timerBlur: formatNumberPositive(timerBlur) }),
   setTimerBackgroundColor: (timerBackgroundColor) => set({ timerBackgroundColor }),
-  setTimerBackgroundColorEnding: (timerBackgroundColorEnding) => set({ timerBackgroundColorEnding }),
   setTimerTextColor: (timerTextColor) => set({ timerTextColor }),
+  setTimerCornerRadius: (timerCornerRadius) => set({ timerCornerRadius: formatNumberPositive(timerCornerRadius) }),
+  setTimerOutlineSize: (timerOutlineSize) => set({ timerOutlineSize: formatNumberPositive(timerOutlineSize) }),
+  setTimerOutlineColor: (timerOutlineColor) => set({ timerOutlineColor }),
+
   setTimerTextEndingColor: (timerTextEndingColor) => set({ timerTextEndingColor }),
-  setTimerCornerRadius: (timerCornerRadius) => {
-    const formatedNumber = formatNumber(timerCornerRadius);
-    set({
-      timerCornerRadius: (formatedNumber < 0)? 0 : formatedNumber
-    })
-  },
+  setTimerBackgroundColorEnding: (timerBackgroundColorEnding) => set({ timerBackgroundColorEnding }),
+  setTimerOutlineSizeEnding: (timerOutlineSizeEnding) => set({ timerOutlineSizeEnding: formatNumberPositive(timerOutlineSizeEnding) }),
+  setTimerOutlineColorEnding: (timerOutlineColorEnding) => set({ timerOutlineColorEnding }),
 
   resetDefaults: () => set({ ...timerStoreInitialValues })
 

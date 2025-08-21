@@ -13,9 +13,12 @@ export const TimerCommon = () => {
             timerStartTime,
             timerAddingTime,
             timerSubtractingTime,
+            timerEndingTime,
+
             setTimerStartTime,
             setTimerAddingTime,
-            setTimerSubtractingTime
+            setTimerSubtractingTime,
+            setTimerEndingTime
         } = useTimerStore();
 
     return (
@@ -60,6 +63,16 @@ export const TimerCommon = () => {
                         onChange={(event) => setTimerSubtractingTime(event.target.value)}
                     />}
                 label="Отнимаемое время (сек.)"
+            />
+
+             <FormFiled
+                inputElement={
+                    <NumberInput
+                        id="darkto__timer__ending-time"
+                        value={String(timerEndingTime)}
+                        onChange={(event) => setTimerEndingTime(event.target.value)}
+                    />}
+                label="Истекающее время"
             />
 
             <FormFiled

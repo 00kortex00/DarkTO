@@ -7,6 +7,7 @@ export interface TimerStoreValues {
     timerStartTime: number;
     timerAddingTime: number;
     timerSubtractingTime: number;
+    timerEndingTime: number;
 
     timerKeyAddTime: string;
     timerKeySubtractTime: string;
@@ -14,11 +15,19 @@ export interface TimerStoreValues {
     timerKeyReset: string;
     timerKeySwitchVisibility: string;
 
-    timerBackgroundColor: string;
-    timerBackgroundColorEnding: string;
-    timerTextColor: string;
-    timerTextEndingColor: string;
+    timerBlur: number;
     timerCornerRadius: number;
+    timerBackgroundColor: string;
+    timerTextColor: string;
+    timerOutlineSize: number;
+    timerOutlineColor: string;
+
+
+    timerTextEndingColor: string;
+    timerBackgroundColorEnding: string;
+    timerOutlineSizeEnding: number;
+    timerOutlineColorEnding: string;
+
 }
 
 type TimerPositionCallback = (prev: [number, number]) => [number, number];
@@ -35,6 +44,7 @@ export interface TimerStoreActions {
     setTimerStartTime: (seconds: number | string) => void;
     setTimerAddingTime: (seconds: number | string) => void;
     setTimerSubtractingTime: (seconds: number | string) => void;
+    setTimerEndingTime: (seconds: number | string) => void;
 
     setTimerKeyAddTime: (key: string) => void;
     setTimerKeySubtractTime: (key: string) => void;
@@ -42,11 +52,17 @@ export interface TimerStoreActions {
     setTimerKeyReset: (key: string) => void;
     setTimerKeySwitchVisibility: (key: string) => void;
 
+    setTimerBlur: (blur: number | string) => void;
     setTimerBackgroundColor: (color: string) => void;
-    setTimerBackgroundColorEnding: (color: string) => void;
     setTimerTextColor: (color: string) => void;
-    setTimerTextEndingColor: (color: string) => void;
     setTimerCornerRadius: (radius: number | string) => void;
+    setTimerOutlineSize: (size: number | string) => void;
+    setTimerOutlineColor: (color: string) => void;
+
+    setTimerTextEndingColor: (color: string) => void;
+    setTimerBackgroundColorEnding: (color: string) => void;
+    setTimerOutlineSizeEnding: (size: number | string) => void;
+    setTimerOutlineColorEnding: (size: string) => void;
 
     resetDefaults: () => void;
 }
