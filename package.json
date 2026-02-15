@@ -32,8 +32,11 @@
 		"@types/node": "^24.0.15",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7",
+		"sharp": "^0.34.5",
+		"svgo": "^4.0.0",
 		"typescript": "~5.8.3",
 		"vite": "^7.0.5",
+		"vite-plugin-image-optimizer": "^2.0.3",
 		"vite-plugin-zip-pack": "^1.2.4"
 	}
 }

@@ -2,6 +2,7 @@ import path from "node:path";
 import { crx } from "@crxjs/vite-plugin";
 import preact from "@preact/preset-vite";
 import { defineConfig } from "vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import zip from "vite-plugin-zip-pack";
 import manifest from "./manifest.config.js";
 import { name, version } from "./package.json";
@@ -19,6 +20,7 @@ export default defineConfig({
 		},
 	},
 	plugins: [
+		ViteImageOptimizer(),
 		preact(),
 		crx({ manifest }),
 		zip({ outDir: "release", outFileName: `crx-${name}-${version}.zip` }),
