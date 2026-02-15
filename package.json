@@ -18,7 +18,8 @@
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview",
-		"prepare": "husky"
+		"prepare": "husky",
+		"typecheck": "tsc --noEmit"
 	},
 	"lint-staged": {
 		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
