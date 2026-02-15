@@ -14,14 +14,11 @@ export default defineManifest({
 		},
 		default_popup: "src/popup/index.html",
 	},
-	permissions: ["sidePanel", "contentSettings"],
+	permissions: ["contentSettings"],
 	content_scripts: [
 		{
 			js: ["src/content/main.tsx"],
 			matches: ["https://tankionline.com/*"],
 		},
 	],
-	side_panel: {
-		default_path: "src/sidepanel/index.html",
-	},
 });
