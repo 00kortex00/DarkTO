@@ -1,8 +1,0 @@
-#darkto .themesPage {
-    .themeSelection {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 172px);
-        justify-content: center;
-        gap: 24px;
-    }
-}
