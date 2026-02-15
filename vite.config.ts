@@ -13,6 +13,8 @@ export default defineConfig({
 			"react-dom": "preact/compat",
 			"react-dom/test-utils": "preact/test-utils",
 			"react/jsx-runtime": "preact/jsx-runtime",
+
+			"@icons": `${path.resolve(__dirname, "src/assets/icons")}`,
 			"@": `${path.resolve(__dirname, "src")}`,
 		},
 	},

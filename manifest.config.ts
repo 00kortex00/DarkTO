@@ -6,11 +6,11 @@ export default defineManifest({
 	name: pkg.name,
 	version: pkg.version,
 	icons: {
-		48: "public/logo.png",
+		16: "public/logo.png",
 	},
 	action: {
 		default_icon: {
-			48: "public/logo.png",
+			16: "public/logo.png",
 		},
 		default_popup: "src/popup/index.html",
 	},
@@ -18,7 +18,7 @@ export default defineManifest({
 	content_scripts: [
 		{
 			js: ["src/content/main.tsx"],
-			matches: ["https://*/*"],
+			matches: ["https://tankionline.com/*"],
 		},
 	],
 	side_panel: {

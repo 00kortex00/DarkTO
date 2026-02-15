@@ -1,7 +1,7 @@
 import { render } from "preact";
-import App from "./views/App.tsx";
+import App from "./App.tsx";
 
-console.log("[CRXJS] Hello world from content script!");
+console.log("[DarkTO] Mod initialized");
 
 const container = document.createElement("div");
 container.id = "crxjs-app";
