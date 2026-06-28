@@ -1,69 +1,117 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 ::selection {
-  color: #000;
-  background-color: #a00;
+	color: #000;
+	background-color: #a00;
 }
 
 body {
-  min-width: 128px;
-  min-height: 64px;
+	min-width: 192px;
+	min-height: 120px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  background-color: #111;
-  color: #aaa;
-  font-size: 14px;
+	background-color: #111;
+	color: #aaa;
+	font-size: 14px;
+	font-family: Inter, system-ui, sans-serif;
 }
 
 a {
-  color: #fff;
+	color: #fff;
+}
+
+button {
+	font: inherit;
 }
 
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
-  padding: 12px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 12px;
+	padding: 16px 24px;
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	font-size: 18px;
+	color: #f3f3f3;
 }
 
 .logo {
-  width: 24px;
+	width: 24px;
+}
+
+.theme-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 144px;
+	padding: 8px 12px;
+	border: 1px solid #333;
+	border-radius: 999px;
+	background: #1c1c1c;
+	color: #ddd;
+	cursor: pointer;
+	transition:
+		background-color 0.2s,
+		border-color 0.2s,
+		color 0.2s;
+}
+
+.theme-toggle:hover {
+	background: #252525;
+	border-color: #555;
+}
+
+.theme-toggle--enabled {
+	border-color: #a00;
+	color: #fff;
+}
+
+.theme-toggle__status {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #666;
+	box-shadow: 0 0 0 transparent;
+}
+
+.theme-toggle--enabled .theme-toggle__status {
+	background: #d11;
+	box-shadow: 0 0 10px #a00;
 }
 
 .socials {
-  display: flex;
-  gap: 8px;
+	display: flex;
+	gap: 8px;
 }
 
 .socials a {
-  width: 24px;
-  height: 24px;
-  background-color: #aaa;
-  color: #000;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 1s;
+	width: 24px;
+	height: 24px;
+	background-color: #aaa;
+	color: #000;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 1s;
 
-  &:hover {
-    background-color: #ccc;
-    transition: .01s;
-  }
+	&:hover {
+		background-color: #ccc;
+		transition: 0.01s;
+	}
 }
